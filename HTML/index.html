@@ -1,0 +1,66 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Indexation</title>
+  <meta name="description" content="Indexation">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="styleindex.css">
+
+</head>
+
+<body>
+<header>
+<h2>Résultats de l'indexation :</h2>
+</header>
+<script src="jquery.js"></script>
+
+<div class="centre2">
+<input id="string" name="string" type="text" placeholder="Entrez un mot a rechercher..." value="" onclick="clearSearch()" />
+</div>
+
+<div class="centre">
+<button id="rech" onclick="searchString()">Rechercher</button>
+
+</div>
+
+<script>
+	
+var input = document.getElementById("string");
+input.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("rech").click();
+    }
+});
+function searchString() {
+    var Sstring = $('#string').val();
+if (Sstring.length === 0) {
+	alert('Veuillez entrer un mot !');
+} else {
+    $("td:contains('" + Sstring + "')").css("background", "yellow");
+    var n = $("td:contains('" + Sstring + "')").length;
+    alert( n + " occurence(s) trouvée(s)");
+const element = $("td:contains('" + Sstring + "')")[0];
+const elementRect = element.getBoundingClientRect();
+const absoluteElementTop = elementRect.top + window.pageYOffset;
+const middle = absoluteElementTop - (window.innerHeight / 2);
+window.scrollTo(0, middle);
+    //$("td:contains('" + Sstring + "')")[0].scrollIntoView(true);
+}
+}
+function clearSearch() {
+    var Sstring = $('#string').val();
+    if (Sstring != '') {
+        $("td:contains('" + Sstring + "')").css("background", "none");
+        //$('#string').val('');
+    }
+}
+
+</script>
+
+
+	<div class="trois_colonnes">

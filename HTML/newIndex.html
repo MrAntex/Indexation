@@ -1,0 +1,1022 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Indexation</title>
+  <meta name="description" content="Indexation">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="styleindex.css">
+
+</head>
+
+<body>
+<header>
+<h2>Résultats de l'indexation :</h2>
+</header>
+<script src="jquery.js"></script>
+
+<div class="centre2">
+<input id="string" name="string" type="text" placeholder="Entrez un mot a rechercher..." value="" onclick="clearSearch()" />
+</div>
+
+<div class="centre">
+<button id="rech" onclick="searchString()">Rechercher</button>
+
+</div>
+
+<script>
+	
+var input = document.getElementById("string");
+input.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("rech").click();
+    }
+});
+function searchString() {
+    var Sstring = $('#string').val();
+if (Sstring.length === 0) {
+	alert('Veuillez entrer un mot !');
+} else {
+    $("td:contains('" + Sstring + "')").css("background", "yellow");
+    var n = $("td:contains('" + Sstring + "')").length;
+    alert( n + " occurence(s) trouvée(s)");
+const element = $("td:contains('" + Sstring + "')")[0];
+const elementRect = element.getBoundingClientRect();
+const absoluteElementTop = elementRect.top + window.pageYOffset;
+const middle = absoluteElementTop - (window.innerHeight / 2);
+window.scrollTo(0, middle);
+    //$("td:contains('" + Sstring + "')")[0].scrollIntoView(true);
+}
+}
+function clearSearch() {
+    var Sstring = $('#string').val();
+    if (Sstring != '') {
+        $("td:contains('" + Sstring + "')").css("background", "none");
+        //$('#string').val('');
+    }
+}
+
+</script>
+
+
+	<div class="trois_colonnes">
+<div class="marges">
+<ul class="nav">
+<li><b>• Fichier : deux </b><ul>
+<li>/potter</li></ul></li></ul>
+<table border="1">
+<tr>
+<th>Mot</th>
+<th>Occurences</th>
+<th>Lignes</th>
+</tr>
+<tr>
+<td>rtjlrthr</td>
+<td>1</td>
+<td>1</td>
+
+</tr><tr>
+<td>therth</td>
+<td>1</td>
+<td>2</td>
+
+</tr><tr>
+<td>rthrthr</td>
+<td>1</td>
+<td>3</td>
+
+</tr><tr>
+<td>bite</td>
+<td>3</td>
+<td>3, 4, 5</td>
+
+</tr><tr>
+<td>couille</td>
+<td>1</td>
+<td>3</td>
+
+</tr><tr>
+<td>thr</td>
+<td>1</td>
+<td>4</td>
+
+</tr><tr>
+<td>couille.</td>
+<td>1</td>
+<td>5</td>
+
+</tr><tr>
+<td>erere</td>
+<td>1</td>
+<td>5</td>
+
+</tr><tr>
+<td>fsdfs</td>
+<td>1</td>
+<td>5</td>
+
+</tr><tr>
+<td>th</td>
+<td>3</td>
+<td>6, 9, 13</td>
+
+</tr><tr>
+<td>rth</td>
+<td>3</td>
+<td>7, 10, 11</td>
+
+</tr><tr>
+<td>r</td>
+<td>2</td>
+<td>8, 12</td>
+
+</tr><tr>
+<td>tuk</td>
+<td>1</td>
+<td>15</td>
+
+</tr><tr>
+<td>y</td>
+<td>1</td>
+<td>16</td>
+
+</tr><tr>
+<td>;uy_</td>
+<td>1</td>
+<td>17</td>
+
+</tr><tr>
+<td>lèu</td>
+<td>1</td>
+<td>18</td>
+
+</tr><tr>
+<td>lk;t</td>
+<td>1</td>
+<td>19</td>
+
+</tr><tr>
+<td>he</td>
+<td>1</td>
+<td>20</td>
+
+</tr><tr>
+<td>(y</td>
+<td>1</td>
+<td>21</td>
+
+</tr></table>
+</div>
+<div class="marges">
+<ul class="nav">
+<li><b>• Fichier : deux(copie2) </b><ul>
+<li>/potter</li></ul></li></ul>
+<table border="1">
+<tr>
+<th>Mot</th>
+<th>Occurences</th>
+<th>Lignes</th>
+</tr>
+<tr>
+<td>zerkugz</td>
+<td>1</td>
+<td>1</td>
+
+</tr><tr>
+<td>e(gzj'e(gn</td>
+<td>1</td>
+<td>2</td>
+
+</tr><tr>
+<td>z'(gzkj'(begz</td>
+<td>1</td>
+<td>3</td>
+
+</tr><tr>
+<td>(gzak'(gjbnz'</td>
+<td>1</td>
+<td>4</td>
+
+</tr><tr>
+<td>$(gg476837</td>
+<td>1</td>
+<td>5</td>
+
+</tr><tr>
+<td>68</td>
+<td>1</td>
+<td>6</td>
+
+</tr><tr>
+<td>697</td>
+<td>1</td>
+<td>7</td>
+
+</tr><tr>
+<td>676</td>
+<td>1</td>
+<td>8</td>
+
+</tr><tr>
+<td>7</td>
+<td>1</td>
+<td>9</td>
+
+</tr></table>
+</div>
+<div class="marges">
+<ul class="nav">
+<li><b>• Fichier : deux(copie 3) </b><ul>
+<li>/potter</li></ul></li></ul>
+<table border="1">
+<tr>
+<th>Mot</th>
+<th>Occurences</th>
+<th>Lignes</th>
+</tr>
+<tr>
+<td>zrmoth,</td>
+<td>1</td>
+<td>1</td>
+
+</tr><tr>
+<td>z$'(haézko(pyak</td>
+<td>1</td>
+<td>2</td>
+
+</tr><tr>
+<td>zkh(aé'(iàak</td>
+<td>1</td>
+<td>3</td>
+
+</tr><tr>
+<td>"'k(hiaài(k</td>
+<td>1</td>
+<td>4</td>
+
+</tr><tr>
+<td>a'($hiz'çà-k</td>
+<td>1</td>
+<td>5</td>
+
+</tr><tr>
+<td>az'(hkz'hoa'z;</td>
+<td>1</td>
+<td>6</td>
+
+</tr><tr>
+<td>*'aphk'</td>
+<td>1</td>
+<td>7</td>
+
+</tr><tr>
+<td>hl</td>
+<td>1</td>
+<td>8</td>
+
+</tr></table>
+</div>
+<div class="marges">
+<ul class="nav">
+<li><b>• Fichier : deux(copie4) </b><ul>
+<li>/potter</li></ul></li></ul>
+<table border="1">
+<tr>
+<th>Mot</th>
+<th>Occurences</th>
+<th>Lignes</th>
+</tr>
+<tr>
+<td>esh</td>
+<td>1</td>
+<td>1</td>
+
+</tr><tr>
+<td>etrh"(èu</td>
+<td>1</td>
+<td>2</td>
+
+</tr><tr>
+<td>"é'yé'</td>
+<td>1</td>
+<td>3</td>
+
+</tr><tr>
+<td>($kuéà'-khaép'(kh</td>
+<td>1</td>
+<td>4</td>
+
+</tr><tr>
+<td>aé'(àhjuaé'àjhaéà'h(</td>
+<td>1</td>
+<td>5</td>
+
+</tr><tr>
+<td>é'()i-é</td>
+<td>1</td>
+<td>6</td>
+
+</tr><tr>
+<td>'=(-h</td>
+<td>1</td>
+<td>7</td>
+
+</tr><tr>
+<td>'-hi)</td>
+<td>1</td>
+<td>8</td>
+
+</tr><tr>
+<td>'zezez*ed</td>
+<td>1</td>
+<td>9</td>
+
+</tr><tr>
+<td>zedz</td>
+<td>2</td>
+<td>10, 12</td>
+
+</tr><tr>
+<td>ed</td>
+<td>1</td>
+<td>11</td>
+
+</tr><tr>
+<td>edzed</td>
+<td>1</td>
+<td>13</td>
+
+</tr><tr>
+<td>ze</td>
+<td>1</td>
+<td>14</td>
+
+</tr><tr>
+<td>bonjour</td>
+<td>3</td>
+<td>15, 15, 17</td>
+
+</tr><tr>
+<td>je</td>
+<td>2</td>
+<td>15, 15</td>
+
+</tr><tr>
+<td>m'appelle</td>
+<td>1</td>
+<td>15</td>
+
+</tr><tr>
+<td>julien</td>
+<td>1</td>
+<td>15</td>
+
+</tr><tr>
+<td>ldr</td>
+<td>1</td>
+<td>15</td>
+
+</tr><tr>
+<td>lel</td>
+<td>1</td>
+<td>15</td>
+
+</tr><tr>
+<td>m'a</td>
+<td>1</td>
+<td>15</td>
+
+</tr><tr>
+<td>trompé</td>
+<td>1</td>
+<td>15</td>
+
+</tr><tr>
+<td>ohlala</td>
+<td>1</td>
+<td>16</td>
+
+</tr><tr>
+<td>oui</td>
+<td>2</td>
+<td>18, 20</td>
+
+</tr><tr>
+<td>hmhm</td>
+<td>1</td>
+<td>19</td>
+
+</tr></table>
+</div>
+<div class="marges">
+<ul class="nav">
+<li><b>• Fichier : dix-houit </b><ul>
+<li>/potter</li></ul></li></ul>
+<table border="1">
+<tr>
+<th>Mot</th>
+<th>Occurences</th>
+<th>Lignes</th>
+</tr>
+<tr>
+<td>qkzeuyfgz'àutèykzler</td>
+<td>1</td>
+<td>1</td>
+
+</tr><tr>
+<td>gĥzp'(iugjaz</td>
+<td>1</td>
+<td>2</td>
+
+</tr><tr>
+<td>$r(goau'ghja</td>
+<td>1</td>
+<td>3</td>
+
+</tr><tr>
+<td>=")'ga"pgjka</td>
+<td>1</td>
+<td>4</td>
+
+</tr><tr>
+<td>"=ga"(</td>
+<td>1</td>
+<td>5</td>
+
+</tr><tr>
+<td>=)gia(</td>
+<td>1</td>
+<td>6</td>
+
+</tr><tr>
+<td>"=gika"</td>
+<td>1</td>
+<td>7</td>
+
+</tr><tr>
+<td>=kg</td>
+<td>1</td>
+<td>8</td>
+
+</tr><tr>
+<td>⁼"(kga"</td>
+<td>1</td>
+<td>9</td>
+
+</tr><tr>
+<td>'ĝka"</td>
+<td>1</td>
+<td>10</td>
+
+</tr><tr>
+<td>g'a"</td>
+<td>1</td>
+<td>11</td>
+
+</tr><tr>
+<td>'ĝa"'</td>
+<td>1</td>
+<td>12</td>
+
+</tr><tr>
+<td>ĝk</td>
+<td>1</td>
+<td>13</td>
+
+</tr></table>
+</div>
+<div class="marges">
+<ul class="nav">
+<li><b>• Fichier : ergerg </b><ul>
+<li>/potter</li></ul></li></ul>
+<table border="1">
+<tr>
+<th>Mot</th>
+<th>Occurences</th>
+<th>Lignes</th>
+</tr>
+<tr>
+<td>62</td>
+<td>1</td>
+<td>1</td>
+
+</tr><tr>
+<td>7</td>
+<td>1</td>
+<td>3</td>
+
+</tr><tr>
+<td>54</td>
+<td>1</td>
+<td>4</td>
+
+</tr><tr>
+<td>8</td>
+<td>1</td>
+<td>5</td>
+
+</tr><tr>
+<td>1</td>
+<td>1</td>
+<td>7</td>
+
+</tr><tr>
+<td>845u4kj8</td>
+<td>1</td>
+<td>8</td>
+
+</tr><tr>
+<td>gh8kl4$</td>
+<td>1</td>
+<td>9</td>
+
+</tr><tr>
+<td>sdfghj</td>
+<td>1</td>
+<td>10</td>
+
+</tr></table>
+</div>
+<div class="marges">
+<ul class="nav">
+<li><b>• Fichier : ergerg(copie2) </b><ul>
+<li>/potter</li></ul></li></ul>
+<table border="1">
+<tr>
+<th>Mot</th>
+<th>Occurences</th>
+<th>Lignes</th>
+</tr>
+<tr>
+<td>srtjh</td>
+<td>1</td>
+<td>1</td>
+
+</tr><tr>
+<td>zrthsrth</td>
+<td>1</td>
+<td>3</td>
+
+</tr><tr>
+<td>zserth</td>
+<td>1</td>
+<td>4</td>
+
+</tr></table>
+</div>
+<div class="marges">
+<ul class="nav">
+<li><b>• Fichier : ergerg(copie3) </b><ul>
+<li>/potter</li></ul></li></ul>
+<table border="1">
+<tr>
+<th>Mot</th>
+<th>Occurences</th>
+<th>Lignes</th>
+</tr>
+<tr>
+<td>ethzeth</td>
+<td>1</td>
+<td>1</td>
+
+</tr><tr>
+<td>aerhaerh</td>
+<td>1</td>
+<td>2</td>
+
+</tr><tr>
+<td>aehtuiml</td>
+<td>1</td>
+<td>3</td>
+
+</tr><tr>
+<td>zefz</td>
+<td>1</td>
+<td>7</td>
+
+</tr><tr>
+<td>efgazerh</td>
+<td>1</td>
+<td>7</td>
+
+</tr><tr>
+<td>(Èlui(yil;</td>
+<td>1</td>
+<td>10</td>
+
+</tr></table>
+</div>
+<div class="marges">
+<ul class="nav">
+<li><b>• Fichier : monsieur </b><ul>
+<li>/potter/madame</li></ul></li></ul>
+<table border="1">
+<tr>
+<th>Mot</th>
+<th>Occurences</th>
+<th>Lignes</th>
+</tr>
+<tr>
+<td>zurg</td>
+<td>1</td>
+<td>1</td>
+
+</tr><tr>
+<td>zegbqerg</td>
+<td>1</td>
+<td>2</td>
+
+</tr><tr>
+<td>cactus</td>
+<td>1</td>
+<td>3</td>
+
+</tr><tr>
+<td>zergzeriug</td>
+<td>1</td>
+<td>4</td>
+
+</tr><tr>
+<td>er</td>
+<td>1</td>
+<td>5</td>
+
+</tr><tr>
+<td>gzerg</td>
+<td>1</td>
+<td>6</td>
+
+</tr><tr>
+<td>erg</td>
+<td>1</td>
+<td>7</td>
+
+</tr><tr>
+<td>la</td>
+<td>2</td>
+<td>8, 10</td>
+
+</tr><tr>
+<td>conjoncture</td>
+<td>1</td>
+<td>8</td>
+
+</tr><tr>
+<td>actuelle</td>
+<td>1</td>
+<td>8</td>
+
+</tr><tr>
+<td>des</td>
+<td>2</td>
+<td>8, 9</td>
+
+</tr><tr>
+<td>évenneùents</td>
+<td>1</td>
+<td>8</td>
+
+</tr><tr>
+<td>est</td>
+<td>1</td>
+<td>8</td>
+
+</tr><tr>
+<td>en</td>
+<td>2</td>
+<td>8, 12</td>
+
+</tr><tr>
+<td>parfaite</td>
+<td>1</td>
+<td>8</td>
+
+</tr><tr>
+<td>corrélation</td>
+<td>1</td>
+<td>8</td>
+
+</tr><tr>
+<td>avec</td>
+<td>1</td>
+<td>9</td>
+
+</tr><tr>
+<td>l'alignement</td>
+<td>1</td>
+<td>9</td>
+
+</tr><tr>
+<td>parfait</td>
+<td>1</td>
+<td>9</td>
+
+</tr><tr>
+<td>astres</td>
+<td>1</td>
+<td>9</td>
+
+</tr><tr>
+<td>celestes,</td>
+<td>1</td>
+<td>10</td>
+
+</tr><tr>
+<td>rien</td>
+<td>1</td>
+<td>10</td>
+
+</tr><tr>
+<td>que</td>
+<td>1</td>
+<td>10</td>
+
+</tr><tr>
+<td>beauté</td>
+<td>1</td>
+<td>10</td>
+
+</tr><tr>
+<td>de</td>
+<td>3</td>
+<td>10, 11, 12</td>
+
+</tr><tr>
+<td>voir</td>
+<td>1</td>
+<td>10</td>
+
+</tr><tr>
+<td>ces</td>
+<td>1</td>
+<td>10</td>
+
+</tr><tr>
+<td>gigantesques</td>
+<td>1</td>
+<td>11</td>
+
+</tr><tr>
+<td>couilles</td>
+<td>1</td>
+<td>11</td>
+
+</tr><tr>
+<td>lumières</td>
+<td>1</td>
+<td>11</td>
+
+</tr><tr>
+<td>fusion</td>
+<td>1</td>
+<td>12</td>
+
+</tr><tr>
+<td>dans</td>
+<td>1</td>
+<td>12</td>
+
+</tr><tr>
+<td>l'espace</td>
+<td>1</td>
+<td>12</td>
+
+</tr><tr>
+<td>me</td>
+<td>1</td>
+<td>12</td>
+
+</tr><tr>
+<td>remplit</td>
+<td>1</td>
+<td>12</td>
+
+</tr><tr>
+<td>joie</td>
+<td>1</td>
+<td>12</td>
+
+</tr></table>
+</div>
+<div class="marges">
+<ul class="nav">
+<li><b>• Fichier : ornythorinque </b><ul>
+<li>/potter</li></ul></li></ul>
+<table border="1">
+<tr>
+<th>Mot</th>
+<th>Occurences</th>
+<th>Lignes</th>
+</tr>
+<tr>
+<td>zsedfgrhjklm</td>
+<td>1</td>
+<td>1</td>
+
+</tr><tr>
+<td>xcvnjh:m</td>
+<td>1</td>
+<td>2</td>
+
+</tr><tr>
+<td>sdfghjp*$</td>
+<td>1</td>
+<td>3</td>
+
+</tr><tr>
+<td>qsdfghjmù*</td>
+<td>1</td>
+<td>4</td>
+
+</tr></table>
+</div>
+<div class="marges">
+<ul class="nav">
+<li><b>• Fichier : poikjuhygtfds </b><ul>
+<li>/potter</li></ul></li></ul>
+<table border="1">
+<tr>
+<th>Mot</th>
+<th>Occurences</th>
+<th>Lignes</th>
+</tr>
+<tr>
+<td>852</td>
+<td>4</td>
+<td>1, 2, 3, 4</td>
+
+</tr></table>
+</div>
+<div class="marges">
+<ul class="nav">
+<li><b>• Fichier : doccc </b><ul>
+<li>/potter/zkejf alzekfhaekf</li></ul></li></ul>
+<table border="1">
+<tr>
+<th>Mot</th>
+<th>Occurences</th>
+<th>Lignes</th>
+</tr>
+<tr>
+<td>bonsoir</td>
+<td>1</td>
+<td>1</td>
+
+</tr><tr>
+<td>bonjour</td>
+<td>1</td>
+<td>2</td>
+
+</tr><tr>
+<td>rien</td>
+<td>1</td>
+<td>3</td>
+
+</tr><tr>
+<td>d'important</td>
+<td>1</td>
+<td>4</td>
+
+</tr><tr>
+<td>oh</td>
+<td>3</td>
+<td>5, 5, 5</td>
+
+</tr><tr>
+<td>la</td>
+<td>2</td>
+<td>6, 7</td>
+
+</tr></table>
+</div>
+<div class="marges">
+<ul class="nav">
+<li><b>• Fichier : docx </b><ul>
+<li>/potter/zkejf alzekfhaekf</li></ul></li></ul>
+<table border="1">
+<tr>
+<th>Mot</th>
+<th>Occurences</th>
+<th>Lignes</th>
+</tr>
+<tr>
+<td>bonsoira</td>
+<td>1</td>
+<td>1</td>
+
+</tr><tr>
+<td>ceci</td>
+<td>1</td>
+<td>2</td>
+
+</tr><tr>
+<td>est</td>
+<td>1</td>
+<td>3</td>
+
+</tr><tr>
+<td>un</td>
+<td>1</td>
+<td>4</td>
+
+</tr><tr>
+<td>test,</td>
+<td>1</td>
+<td>4</td>
+
+</tr><tr>
+<td>ohlalala</td>
+<td>1</td>
+<td>4</td>
+
+</tr><tr>
+<td>test</td>
+<td>3</td>
+<td>5, 6, 7</td>
+
+</tr><tr>
+<td>wola</td>
+<td>1</td>
+<td>8</td>
+
+</tr><tr>
+<td>alo</td>
+<td>1</td>
+<td>9</td>
+
+</tr></table>
+</div>
+<div class="marges">
+<ul class="nav">
+<li><b>• Fichier : trois </b><ul>
+<li>/potter/zkejf alzekfhaekf/ytyytyt</li></ul></li></ul>
+<table border="1">
+<tr>
+<th>Mot</th>
+<th>Occurences</th>
+<th>Lignes</th>
+</tr>
+<tr>
+<td>85</td>
+<td>2</td>
+<td>1, 4</td>
+
+</tr><tr>
+<td>65</td>
+<td>1</td>
+<td>2</td>
+
+</tr><tr>
+<td>5</td>
+<td>1</td>
+<td>3</td>
+
+</tr><tr>
+<td>gvf</td>
+<td>1</td>
+<td>5</td>
+
+</tr><tr>
+<td>$s</td>
+<td>1</td>
+<td>6</td>
+
+</tr><tr>
+<td>$</td>
+<td>1</td>
+<td>7</td>
+
+</tr><tr>
+<td>df</td>
+<td>1</td>
+<td>9</td>
+
+</tr><tr>
+<td>y</td>
+<td>1</td>
+<td>11</td>
+
+</tr><tr>
+<td>khuimgl$du-z'</td>
+<td>1</td>
+<td>14</td>
+
+</tr><tr>
+<td>-ue'</td>
+<td>1</td>
+<td>15</td>
+
+</tr><tr>
+<td>u-'u-</td>
+<td>1</td>
+<td>16</td>
+
+</tr></table>
+</div>
+</div>
+</body>
+</html>

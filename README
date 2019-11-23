@@ -1,0 +1,35 @@
+Fonctionnement du script
+
+Ce script permet l'indexation des fichiers se trouvant dans un repertoire ainsi que les sous-repertoires qu'il contient.
+
+Il se lance de la manière suivante : bash **********.sh [OPTION] [DOSSIER/MOT]
+
+Il comporte 5 options qui sont les suivantes :
+
+  -> L'option d'indexation classique [--index] [dossier à indexer], qui fait une liste comportant pour chaque fichier présent dans les dossiers/sous-dossiers mis en paramètre les mots qu'ils contiennent, leur nombre d'occurences, et les lignes auxquelles on les trouve dans lesdits fichiers.
+Lors de la première indexation ou si le fichier d'indexation (le fichier "listant" les fichiers et leurs mots) n'existe pas ou à été supprimé, vous pouvez choisir de laisser le script créer automatiquement un nouveau fichier d'indexation vierge, ou alors vous pouvez décider de sélectionner manuellement un fichier déjà existant dans le répertoire du script pour l'utiliser comme tel, attention, pour éviter les erreurs, son contenu sera alors écrasé.
+Si une indexation avait déjà été faite ou si le fichier d'indexation est disponible, alors une nouvelle indexation se fera dans ce dernier, et le script vérifiera si les fichiers du repertoire choisi étaient déja indexés, et si oui, il vérifiera si leur contenu à changé depuis la dernière indexation en utilisant l'adresse md5 du fichier, si leur contenu à changé leur contenu est analysé à nouveau afin de mettre à jour les mots contenus dans ce fichier. Si les fichiers n'étaient pas encore indexés, ils le sont à cette étape.
+
+  -> L'option d'indexation html [--indexhtml] [dossier à indexer], qui exécute la première option, puis qui affiche les résultats sous la forme d'une page html, où il sera aussi possible d'effectuer une recherche de mots grâce à un script en javascript s'appuyant sur la librairie jquery.
+
+  -> L'option de recherche de mot [--search] [mot(s) à rechercher], qui permet de rechercher un ou plusieurs mots dans les fichiers indexés, et qui retourne le(s) fichier(s) dans le(s)quel(s) ils se trouvent, leur chemin, le nombre d'occurences du mot cherché dans chaque fichier, et les lignes auxquelles ils se trouvent. Il suffit d'entrer plusieurs mots séparés par un espace en paramètre pour rechercher plusieurs mots.
+
+  -> L'option de nettoyage [--clean], qui après confirmation effacera le contenu de la liste d'indexation.
+
+  -> L'option d'aide [--help], qui affiche cette page.
+
+Si ces syntaxes ne sont pas respectées, un message d'erreur sera affiché, et vous indiquera les différentes options disponibles.
+
+	A savoir :
+- Les messages dans la console commencent par un chevron ">", la couleur de ce dernier determine la teneur de ce message 
+    - Bleu : Information
+    - Vert : Succès/Résultat
+    - Rouge : Erreur/Malfonctionnement
+    - Jaune : Attente d'entrée utilisateur
+- Nous avons décidé que script considerera un mot suivi de ponctation comme le mot tout court. De même, un même mot avec ou sans majuscule sera considéré comme le même. (càd: "Bonjour." sera interprété comme le mot "bonjour").
+
+L'équipe vous souhaite une bonne indéxation. 
+
+Joyeuses fêtes !
+
+
